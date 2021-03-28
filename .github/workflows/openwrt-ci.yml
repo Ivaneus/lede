@@ -107,14 +107,14 @@ jobs:
           EOF
 
           # 固件压缩:
-          # cat >> .config <<EOF
-          # CONFIG_TARGET_IMAGES_GZIP=y
-          # EOF
+          cat >> .config <<EOF
+          CONFIG_TARGET_IMAGES_GZIP=y
+          EOF
 
           # 编译UEFI固件:
-          # cat >> .config <<EOF
-          # CONFIG_EFI_IMAGES=y
-          # EOF
+          cat >> .config <<EOF
+          CONFIG_EFI_IMAGES=y
+          EOF
 
           # IPv6支持:
           # cat >> .config <<EOF
@@ -168,10 +168,10 @@ jobs:
           # EOF
 
           # LuCI主题:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-theme-argon=y
-          # CONFIG_PACKAGE_luci-theme-netgear=y
-          # EOF
+          CONFIG_PACKAGE_luci-theme-netgear=y
+          EOF
 
           # 常用软件包:
           # cat >> .config <<EOF
