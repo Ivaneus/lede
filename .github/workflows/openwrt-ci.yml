@@ -10,12 +10,12 @@
 name: OpenWrt-CI
 
 on:
-  push:
+ push:
     branches: 
-      - master
-   schedule:
+     - master
+ schedule:
      - cron: 0 20 * * *
-   release:
+ release:
      types: [published]
 
 jobs:
