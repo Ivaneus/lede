@@ -61,7 +61,7 @@ jobs:
           cd package
           mkdir openwrt-packages
           cd openwrt-packages
-          git clone -b v0.40.7-beta https://github.com/vernesong/OpenClash.git package/OpenClash
+          git clone -b v0.40.15-beta https://github.com/vernesong/OpenClash.git package/OpenClash
           
       - name: Update feeds
         run: |
@@ -124,10 +124,10 @@ jobs:
           EOF
 
           # IPv6支持:
-          # cat >> .config <<EOF
-          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          # CONFIG_PACKAGE_ipv6helper=y
-          # EOF
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+          CONFIG_PACKAGE_ipv6helper=y
+          EOF
 
           # 多文件系统支持:
           # cat >> .config <<EOF
@@ -176,7 +176,7 @@ jobs:
 
           # LuCI主题:
           cat >> .config <<EOF
-          # CONFIG_PACKAGE_luci-theme-argon=y
+          CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
           CONFIG_PACKAGE_curl=y
           CONFIG_PACKAGE_coreutils-nohup=y
@@ -192,6 +192,9 @@ jobs:
           CONFIG_PACKAGE_iptables-mod-tproxy=y
           CONFIG_PACKAGE_iptables-mod-extra=y
           CONFIG_PACKAGE_luci-app-openclash=y
+          CONFIG_PACKAGE_luci-app-dnscrypt-dnsforwarder=y
+          CONFIG_PACKAGE_luci-app-flowoffload=y
+          CONFIG_PACKAGE_luci-app-syncdial=y  
           EOF
 
           # 常用软件包:
